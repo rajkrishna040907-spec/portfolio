@@ -40,7 +40,7 @@ export default function ContactSection() {
                     Accept: "application/json",
                 },
                 body: JSON.stringify({
-                    access_key: "5e77f389-0386-479c-bdc6-5f5d5a79a1e1",
+                    access_key: import.meta.env.VITE_WEB3FORMS_KEY,
                     name: name,
                     message: message,
                     to_email: "rajkrishna040907@gmail.com",
