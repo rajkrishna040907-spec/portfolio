@@ -454,7 +454,6 @@ export default function About() {
         <div class="resume-wrapper">
             <!-- Header -->
             <div class="header">
-                <img src="/raj.png" alt="Raj Krishna" class="profile-photo" style="object-fit: cover; border-radius: 50%;">
                 <div class="header-content">
                     <h1>Raj Krishna</h1>
                     <p class="title">Software Developer | Machine Learning & AI Enthusiast</p>
