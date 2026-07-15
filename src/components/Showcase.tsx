@@ -27,21 +27,24 @@ const projects = [
     description: "An end-to-end Machine Learning regression pipeline predicting house prices based on structural features. Built on 2,000 genuine records across an 8-phase ML lifecycle and deployed via Streamlit.",
     tech: "PYTHON • STREAMLIT • SCIKIT-LEARN • ML",
     thumbnail: previewOne,
-    github: "https://github.com/rajkrishna040907-spec/HousePricePredictionSystem",
+    githubUrl: "https://github.com/rajkrishna040907-spec/HousePricePredictionSystem",
+    liveUrl: "https://housepricepredictionsystem2026.streamlit.app/",
   },
   {
     title: "FSSAI Indian Health Star Rating System",
     description: "An interactive, full-stack web dashboard designed to evaluate and assign health star ratings to commercial packaged foods and traditional cooked Indian dishes using a high-performance Hybrid AI Architecture.",
     tech: "PYTHON • STREAMLIT • MACHINE LEARNING",
     thumbnail: previewTwo,
-    github: "https://github.com/rajkrishna040907-spec/HealthStarRating_India",
+    githubUrl: "https://github.com/rajkrishna040907-spec/HealthStarRating_India",
+    liveUrl: "https://healthstarratingindia4wctstivtwm8z28rdhkugb.streamlit.app/",
   },
   {
     title: "3D Interactive Developer Portfolio",
     description: "A high-performance 3D portfolio website featuring physics-backed interactive elements, custom shaders, and real-time mesh mapping built using React Three Fiber.",
     tech: "REACT • THREE.JS • TYPESCRIPT • TAILWIND",
     thumbnail: portfolioPreview,
-    github: "https://github.com/rajkrishna040907-spec/Portfolio",
+    githubUrl: "https://github.com/rajkrishna040907-spec/Portfolio",
+    liveUrl: "https://portfolio-hjbwryjt2-47.vercel.app/",
   },
 ];
 
@@ -81,15 +84,22 @@ function ProjectCard({ item }: { item: typeof projects[0] }) {
       hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10 backdrop-blur-md"
       style={{ backdropFilter: "blur(20px)" }}
     >
-      <div className="relative h-48 overflow-hidden bg-white/5">
-        <img
-          src={item.thumbnail}
-          alt={item.tech}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300" />
-      </div>
+      <a 
+        href={item.liveUrl} 
+        target="_blank" 
+        rel="noopener noreferrer" 
+        className="block overflow-hidden rounded-t-xl group/img cursor-pointer"
+      >
+        <div className="relative h-48 overflow-hidden bg-white/5">
+          <img
+            src={item.thumbnail}
+            alt={item.tech}
+            className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+          <div className="absolute inset-0 bg-white/0 group-hover:bg-white/5 transition-colors duration-300" />
+        </div>
+      </a>
       <div className="p-5 flex flex-col gap-3">
         <h3 className="text-lg font-semibold text-white/90">{item.title}</h3>
         <p className="text-sm text-white/50 leading-relaxed line-clamp-3">
@@ -100,9 +110,10 @@ function ProjectCard({ item }: { item: typeof projects[0] }) {
             {item.tech}
           </span>
           <a
-            href={item.github}
+            href={item.githubUrl}
             target="_blank"
             rel="noopener noreferrer"
+            onClick={(e) => e.stopPropagation()}
             className="flex items-center justify-center w-8 h-8 rounded-full 
             bg-white/5 border border-white/15 text-white/60 shrink-0
             hover:bg-white/10 hover:text-white hover:border-white/30 

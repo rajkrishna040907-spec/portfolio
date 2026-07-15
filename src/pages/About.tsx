@@ -3,7 +3,6 @@ import { ArrowLeft, Download } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
 import html2pdf from "html2pdf.js";
-import rajPhoto from "@/assets/raj.png";
 
 export default function About() {
   const navigate = useNavigate();
@@ -455,26 +454,22 @@ export default function About() {
         <div class="resume-wrapper">
             <!-- Header -->
             <div class="header">
-                <img src="https://raw.githubusercontent.com/princekumar-dev74/web-images-link/31f4e55d34521861579bab4ab322372fe7d8cec4/Name%20%3D%20Prince%20Singh.png" alt="Raj Krishna" class="profile-photo">
+                <img src="/raj.png" alt="Raj Krishna" class="profile-photo" style="object-fit: cover; border-radius: 50%;">
                 <div class="header-content">
                     <h1>Raj Krishna</h1>
-                    <p class="title">Frontend Developer | Cybersecurity & AI Enthusiast</p>
+                    <p class="title">Software Developer | Machine Learning & AI Enthusiast</p>
                     <div class="contact-info">
                         <div class="contact-item">
-                            <span class="contact-icon">🏠︎</span>
-                            <span>Prayagraj, Uttarpradesh, India</span>
-                        </div>
-                        <div class="contact-item">
                             <span class="contact-icon">✉︎</span>
-                            <a href="mailto:sprince05873@gmail.com">sprince05873@gmail.com</a>
+                            <a href="mailto:rajkrishna040907@gmail.com">rajkrishna040907@gmail.com</a>
                         </div>
                         <div class="contact-item">
-                            <span class="contact-icon">🆆</span>
-                            <a href="https://prince-singh-rouge.vercel.app/" target="_blank">Portfolio Website</a>
+                            <span class="contact-icon">🔗</span>
+                            <a href="https://www.linkedin.com/in/raj-krishna-9a09153a1" target="_blank">LinkedIn</a>
                         </div>
                         <div class="contact-item">
                             <span class="contact-icon">⛆</span>
-                            <a href="https://github.com/princekumar-dev74" target="_blank">princekumar-dev74</a>
+                            <a href="https://github.com/rajkrishna040907-spec" target="_blank">rajkrishna040907-spec</a>
                         </div>
                     </div>
                 </div>
@@ -486,7 +481,7 @@ export default function About() {
                 <section class="section">
                     <h2 class="section-title">Professional Summary</h2>
                     <div class="summary-text">
-                        Passionate and self-driven Class 12 student with a strong interest in frontend development, cybersecurity, and modern web technologies. Skilled in building responsive and interactive web applications using modern frameworks and tools. Enthusiastic about learning new technologies, improving problem-solving skills, and creating innovative digital experiences.
+                        Aspiring Computer Science & Engineering undergraduate at United College of Engineering and Research, blending core principles of Frontend Development with a deep passion for Machine Learning and AI. Hands-on experience architecting interactive data dashboards using Streamlit, building multi-phase ML regression pipelines (utilizing Pandas, NumPy, and Scikit-Learn), and deploying responsive, modern web architectures securely via Vercel. Proven ability to translate complex data logic into intuitive, user-friendly UI/UX interfaces while committing to clean code practices and continuous self-learning.
                     </div>
                 </section>
 
@@ -495,24 +490,22 @@ export default function About() {
                     <h2 class="section-title">Technical Skills</h2>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h3>Frontend Development</h3>
+                            <h3>Vibe Coder for now</h3>
                             <div class="skill-tags">
-                                <span class="skill-tag">HTML5</span>
-                                <span class="skill-tag">CSS3</span>
-                                <span class="skill-tag">JavaScript</span>
-                                <span class="skill-tag">TypeScript</span>
-                                <span class="skill-tag">React.js</span>
-                                <span class="skill-tag">Next.js</span>
-                                <span class="skill-tag">Tailwind CSS</span>
+                                <span class="skill-tag">Python</span>
+                                <span class="skill-tag">Pandas</span>
+                                <span class="skill-tag">NumPy</span>
+                                <span class="skill-tag">Matplotlib</span>
                             </div>
                         </div>
                         <div class="skill-category">
                             <h3>Tools & Platforms</h3>
                             <div class="skill-tags">
-                                <span class="skill-tag">Git & GitHub</span>
-                                <span class="skill-tag">Firebase</span>
+                                <span class="skill-tag">GitHub</span>
+                                <span class="skill-tag">Supabase</span>
                                 <span class="skill-tag">Vercel</span>
-                                <span class="skill-tag">Netlify</span>
+                                <span class="skill-tag">StreamLit</span>
+                                <span class="skill-tag">Scikit-Learn</span>
                                 <span class="skill-tag">Windows Terminal</span>
                             </div>
                         </div>
@@ -524,16 +517,16 @@ export default function About() {
                     <h2 class="section-title">Projects</h2>
                     <div class="section-content">
                         <div class="project">
-                            <h3>Personal Portfolio Website</h3>
-                            <p>• Developed a modern responsive portfolio website</p>
-                            <p>• Created smooth animations and interactive UI components</p>
-                            <p>• Optimized the website for performance and mobile responsiveness</p>
+                            <h3>Advanced House Price Prediction System</h3>
+                            <p>• Built an end-to-end Machine Learning regression pipeline predicting property prices based on structural features.</p>
+                            <p>• Engineered clean data transformations and loaded trained estimators securely onto web servers.</p>
+                            <p>• Architecture: Python, Streamlit, Scikit-Learn</p>
                         </div>
                         <div class="project">
-                            <h3>Frontend Showcase Projects</h3>
-                            <p>• Built multiple frontend UI projects using React and Tailwind CSS</p>
-                            <p>• Developed responsive layouts and reusable components</p>
-                            <p>• Focused on modern design, clean code structure, and user experience</p>
+                            <h3>FSSAI Indian Health Star Rating System</h3>
+                            <p>• Designed an interactive, full-stack web dashboard engineered to evaluate and assign health star ratings to commercial packaged foods and traditional recipes.</p>
+                            <p>• Enabled fast algorithmic grading based on nutritional components to promote food safety transparency.</p>
+                            <p>• Architecture: Python, Streamlit, Data Processing</p>
                         </div>
                     </div>
                 </section>
@@ -542,8 +535,10 @@ export default function About() {
                 <section class="section">
                     <h2 class="section-title">Education</h2>
                     <div class="education-item">
-                        <h3>Senior Secondary Education (Class 12 - PCMB)</h3>
-                        <p>Currently pursuing Class 12 with Physics, Chemistry, Mathematics, and Biology</p>
+                        <h3>United College of Engineering and Research</h3>
+                        <p><strong>Degree:</strong> Bachelor of Technology (B.Tech) in Computer Science and Engineering</p>
+                        <p><strong>Timeline:</strong> 2025 – 2029</p>
+                        <p><strong>Location:</strong> Prayagraj, Uttar Pradesh, India</p>
                     </div>
                 </section>
 
@@ -553,7 +548,7 @@ export default function About() {
                     <div class="strengths-list">
                         <div class="strength-item">
                             <span class="strength-icon">✔</span>
-                            <p>Fast Learner</p>
+                            <p>Curious Learner</p>
                         </div>
                         <div class="strength-item">
                             <span class="strength-icon">✔</span>
@@ -561,19 +556,11 @@ export default function About() {
                         </div>
                         <div class="strength-item">
                             <span class="strength-icon">✔</span>
-                            <p>Strong Interest in Technology</p>
+                            <p>Interest in Technology</p>
                         </div>
                         <div class="strength-item">
                             <span class="strength-icon">✔</span>
-                            <p>Consistent Self-Learning</p>
-                        </div>
-                        <div class="strength-item">
-                            <span class="strength-icon">✔</span>
-                            <p>Team Collaboration</p>
-                        </div>
-                        <div class="strength-item">
-                            <span class="strength-icon">✔</span>
-                            <p>Goal-Oriented Approach</p>
+                            <p>Self-Learning</p>
                         </div>
                     </div>
                 </section>
@@ -582,7 +569,7 @@ export default function About() {
                 <section class="section">
                     <h2 class="section-title">Career Objective</h2>
                     <div class="objective-box">
-                        To build a successful career in the tech industry by continuously improving my skills in frontend development, cybersecurity, and AI technologies while contributing to innovative and impactful projects.
+                        To build a successful career in the tech industry by continuously improving my skills in problem solving while contributing to innovative and impactful projects.
                     </div>
                 </section>
 
@@ -591,11 +578,10 @@ export default function About() {
                     <h2 class="section-title">Additional Interests</h2>
                     <div class="skills-grid">
                         <div class="skill-category">
-                            <h3>Technical Interests</h3>
+                            <h3>Interests</h3>
                             <div class="skill-tags">
-                                <span class="skill-tag">Cybersecurity</span>
-                                <span class="skill-tag">Ethical Hacking</span>
-                                <span class="skill-tag">Artificial Intelligence</span>
+                                <span class="skill-tag">Video Editing</span>
+                                <span class="skill-tag">Playing Mobile Games</span>
                             </div>
                         </div>
                     </div>
@@ -685,12 +671,13 @@ export default function About() {
           className="flex flex-col items-center"
         >
           <img
-            src={rajPhoto}
+            src="/raj.png"
             alt="Raj Krishna"
             className="
               w-[200px]
               sm:w-[280px]
               md:w-[320px]
+              aspect-square
               rounded-2xl
               border
               border-white/15
