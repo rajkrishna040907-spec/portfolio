@@ -49,8 +49,20 @@ const projects = [
 ];
 
 const certificates = [
-  { title: "upcoming", tech: "#", thumbnail: "#" },
-  { title: "upcoming", tech: "#", thumbnail: "#" },
+  { 
+    title: "Coding - Syntax Clash", 
+    description: "Certificate of participation/achievement earned during the Syntax Clash coding competition.",
+    credentialUrl: "https://www.linkedin.com/posts/raj-krishna-9a09153a1_coding-syntaxclash-continuouslearning-activity-7457690203261022208--IYT",
+    tech: "COMPETITION", 
+    highlightText: "An intense, speed-focused algorithmic programming competition testing core data structures, syntax speed, and problem-solving efficiency."
+  },
+  { 
+    title: "Machine Learning & AI Workshop", 
+    description: "Hands-on technical workshop on Machine Learning and Artificial Intelligence hosted at MNNIT Allahabad.",
+    credentialUrl: "https://www.linkedin.com/posts/raj-krishna-9a09153a1_machinelearning-artificialintelligence-mnnit-ugcPost-7477959448364265472-CHz7/",
+    tech: "WORKSHOP", 
+    highlightText: "A rigorous technical training program hosted at MNNIT Allahabad, covering foundational regression models, neural network basics, and practical AI implementations."
+  },
 ];
 
 const GithubIcon = () => (
@@ -59,20 +71,9 @@ const GithubIcon = () => (
   </svg>
 );
 
-const DownloadIcon = () => (
+const LinkedInIcon = () => (
   <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-    <path d="M12 16l4-5h-3V4h-2v7H8l4 5zm-8 4h16v-2H4v2z" />
-  </svg>
-);
-
-const Spinner = () => (
-  <svg className="w-4 h-4 animate-spin" fill="none" viewBox="0 0 24 24">
-    <path
-      d="M12 2v4m0 12v4m10-10h-4M6 12H2"
-      stroke="currentColor"
-      strokeWidth="2"
-      strokeLinecap="round"
-    />
+    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
   </svg>
 );
 
@@ -128,60 +129,36 @@ function ProjectCard({ item }: { item: typeof projects[0] }) {
 }
 
 function CertCard({ item }: { item: typeof certificates[0] }) {
-  const [downloading, setDownloading] = useState(false);
-
-  const handleDownload = async () => {
-    setDownloading(true);
-    try {
-      const response = await fetch(item.thumbnail, { mode: "cors" });
-      const blob = await response.blob();
-      const url = window.URL.createObjectURL(blob);
-      const link = document.createElement("a");
-      link.href = url;
-      link.download = `${item.title}.jpg`;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-      window.URL.revokeObjectURL(url);
-    } catch (err) {
-      console.error("Download failed:", err);
-    }
-    setTimeout(() => setDownloading(false), 500);
-  };
-
   return (
-    <div
-      className="group relative rounded-2xl border border-white/15 overflow-hidden bg-white/[0.06]
-      hover:border-white/25 transition-all duration-500
-      hover:-translate-y-2 hover:shadow-2xl hover:shadow-white/10 backdrop-blur-md"
-      style={{ backdropFilter: "blur(20px)" }}
+    <a 
+      href={item.credentialUrl} 
+      target="_blank" 
+      rel="noopener noreferrer" 
+      className="block p-6 bg-zinc-900 border border-zinc-800 rounded-xl hover:border-zinc-700 hover:-translate-y-1 hover:shadow-xl transition-all duration-300 group cursor-pointer"
     >
-      <div className="relative h-48 overflow-hidden bg-white/5">
-        <img
-          src={item.thumbnail}
-          alt={item.title}
-          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-        />
-        <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-        <div className="absolute bottom-4 left-4 right-4">
-          <p className="text-white font-semibold text-sm leading-snug line-clamp-2">{item.title}</p>
+      <div className="mb-4 p-4 bg-zinc-950 rounded-lg text-sm text-gray-400 italic border-l-2 border-emerald-500">
+        "{item.highlightText}"
+      </div>
+      
+      <div className="flex justify-between items-start gap-4">
+        <div>
+          <h3 className="text-xl font-semibold text-white group-hover:text-emerald-400 transition-colors duration-200">
+            {item.title}
+          </h3>
+          <p className="mt-2 text-sm text-gray-400">
+            {item.description}
+          </p>
+        </div>
+        <div
+          className="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full 
+          bg-zinc-800 border border-zinc-700 text-gray-400
+          group-hover:bg-zinc-700 group-hover:text-white group-hover:border-zinc-600 
+          transition-all duration-200"
+        >
+          <LinkedInIcon />
         </div>
       </div>
-      <div className="px-5 py-4 flex items-center justify-between">
-        <span className="text-[10px] uppercase tracking-[0.25em] text-white/40 font-mono">
-          {item.tech}
-        </span>
-        <button
-          onClick={handleDownload}
-          className="flex items-center justify-center w-8 h-8 rounded-full 
-          bg-white/5 border border-white/15 text-white/60 
-          hover:bg-white/10 hover:text-white hover:border-white/30 
-          transition-all duration-200 active:scale-95"
-        >
-          {downloading ? <Spinner /> : <DownloadIcon />}
-        </button>
-      </div>
-    </div>
+    </a>
   );
 }
 
